@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+  margin-top: 39px;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.container > ul{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}

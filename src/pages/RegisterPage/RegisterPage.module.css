@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+   gap: 80px;
+   margin: 0;
+   
+}
+
+
+
+.vector{
+position: absolute;
+left:63.2%;
+bottom: 1px;
+}

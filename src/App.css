@@ -1,0 +1,11 @@
+
+#root {
+
+  text-align: center;
+}
+
+.register{
+    background-image: url(../public/Vector.png);
+      background-repeat: no-repeat;
+      background-position: right bottom;
+}

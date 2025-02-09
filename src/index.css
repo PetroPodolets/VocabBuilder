@@ -1,0 +1,42 @@
+:root {
+    --green: #85AA9F;
+    --white-1: #F8F8F8;
+    --white: #FCFCFC;
+    --black: #121417;
+    --white-green: #a5c0b8;
+    --font-family: "Fixel Display";
+
+}
+
+
+@font-face {
+    font-family: 'Fixel Display';
+    src: url('/fonts/fixel/FixelDisplay-Regular.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0 ;
+   
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+}

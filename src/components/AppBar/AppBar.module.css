@@ -1,0 +1,15 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+}
+
+.logo >p {
+    font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 1.45455;
+        color: var(--black);
+        
+}
