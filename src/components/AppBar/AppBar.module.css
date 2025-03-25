@@ -1,8 +1,13 @@
-.logo {
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+}.logo {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 64px;
 }
 
 .logo >p {
@@ -12,4 +17,9 @@
         line-height: 1.45455;
         color: var(--black);
         
+}
+
+.div{
+    display: flex;
+    gap: 20px;
 }

@@ -9,12 +9,13 @@ export default function Navigation() {
     const getButtonStyle = (isActive) => ({
         color: isActive ? 'white' : 'black',
         fontWeight: isActive ? '500' : '85AA9F',
-        backgroundColor: isActive ? '#85AA9F' : 'transparent',
+        backgroundColor: isActive ? '#85AA9F' : 'transparent'
+        ,
     });
 
 
     return (
-        <nav>
+        <nav className={css.nav}>
             {isLoggedIn && (<>
                 <NavLink to="/dictionary" className={({ isActive }) => (isActive ? css.active : "")}>
                     {({ isActive }) => (

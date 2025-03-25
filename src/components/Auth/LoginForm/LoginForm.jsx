@@ -89,7 +89,7 @@ export default function LoginForm() {
                     Login
                 </button>
 
-                <NavLink to="/register" className={css.linkLogin}>
+                <NavLink to="/" className={css.linkLogin}>
                     Register
                 </NavLink>
             </form>

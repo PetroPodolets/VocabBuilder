@@ -2,7 +2,13 @@
     font-weight: 500;
     color: var(--green);
     border-radius: 15px;
-    padding: 12px 20px;
+    /* padding: 12px 20px; */
     font-family: var(--font-family);
 
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    gap: 28px;
 }

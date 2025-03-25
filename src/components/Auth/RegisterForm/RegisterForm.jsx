@@ -106,8 +106,8 @@ export default function RegisterForm() {
                     Register
                 </button>
 
-                <NavLink to="/login">
-                    <a className={css.linkLogin}>LogIn</a>
+                <NavLink className={css.linkLogin} to="/login">
+                    LogIn
                 </NavLink>
             </form>
         </div>
