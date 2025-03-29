@@ -1,14 +1,28 @@
-.active {
-    font-weight: 500;
-    color: var(--green);
-    border-radius: 15px;
-    /* padding: 12px 20px; */
-    font-family: var(--font-family);
-
+.nav {
+  display: flex;
+  gap: 10px; /* Відстань між кнопками */
 }
 
-.nav{
-    display: flex;
-    align-items: center;
-    gap: 28px;
+.button {
+  padding: 12px 20px;
+  border: none;
+  text-align: center;
+  align-items: center;
+  border-radius: 15px;
+  background: none;
+  transition: all 0.3s ease; /* Плавний перехід */
+}
+
+.active {
+  color: white;
+  font-weight: 500;
+  border-radius: 15px;
+
+  background-color: var(--green); /* Колір із вашого прикладу */
+}
+
+.inactive {
+  color: black;
+  font-weight: normal;
+  background-color: transparent;
 }

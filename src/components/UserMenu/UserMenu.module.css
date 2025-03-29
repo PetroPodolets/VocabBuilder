@@ -1,43 +1,43 @@
 .userMenu {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .textUserMenu {
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 20px;
-    color: var(--black);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--black);
 }
 
 .buttonUserMenu {
-    
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    color: var(--black);
-    display: flex;
-    border: none;
-    align-items: center;
-    background: none;
-    stroke: var(--black);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--black);
+  display: flex;
+  border: none;
+  align-items: center;
+  background: none;
+  stroke: var(--black);
 }
 
 .buttonUserMenu svg {
-    stroke: var(--black);
-    fill: none;
-    /* Скидаємо заливку */
-   
+  stroke: var(--black);
+  fill: none;
+  /* Скидаємо заливку */
 }
 
 .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    stroke: black;
-    border-radius: 30px;
-    width: 48px;
-    height: 48px;
-    background: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  stroke: black;
+  border-radius: 30px;
+  width: 48px;
+  height: 48px;
+  background: var(--green);
+  margin-left: 10px;
+  margin-right: 12px;
 }
