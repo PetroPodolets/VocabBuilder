@@ -7,4 +7,5 @@ function PrivateRoute({ children, redirectTo }) {
     return isLoggedIn ? children : <Navigate to={redirectTo} replace />;
 }
 
+
 export default PrivateRoute;
