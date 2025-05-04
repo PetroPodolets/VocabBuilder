@@ -1,6 +1,6 @@
 import AddWord from "../AddWord/AddWord";
 import Filters from "../Filters/Filters";
-import Statistics from "../Statistic/statistic";
+import Statistics from "../Statistic/Statistic";
 import css from "./Dashboard.module.css"
 
 
