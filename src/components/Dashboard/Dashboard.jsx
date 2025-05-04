@@ -1,1 +1,18 @@
-export default function Dashboard() {}
+import AddWord from "../AddWord/AddWord";
+import Filters from "../Filters/Filters";
+import Statistics from "../Statistic/statistic";
+import css from "./Dashboard.module.css"
+
+
+export default function Dashboard() {
+
+    return (
+        <div className={css.containerDashboard}>
+            <Filters />
+            <div className={css.container}>
+                <Statistics />
+                <AddWord />
+            </div>
+        </div>
+    );
+}

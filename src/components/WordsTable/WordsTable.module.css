@@ -1,0 +1,173 @@
+.wordTable {
+    display: flex;
+    justify-content: center;
+    margin: 28px 100px;
+}
+
+.customDataGrid {
+    background: transparent !important;
+    border: 1px solid #ddd !important;
+    --rdg-background-color: transparent !important;
+    --rdg-header-background-color: transparent !important;
+    --rdg-row-background-color: transparent !important;
+    --rdg-cell-background-color: #FCFCFC !important;
+    --rdg-color: #000000 !important;
+    --rdg-row-height: 72px !important;
+    border-radius: 8px !important;
+    /* Заокруглення кутів таблиці */
+    overflow: hidden !important;
+    /* Запобігає обрізанню вмісту */
+}
+
+.customDataGrid :global(.rdg) {
+    grid-auto-rows: 72px !important;
+    border-radius: 8px !important;
+    /* Заокруглення для внутрішнього Grid */
+}
+
+.customDataGrid :global(.rdg-header-row),
+.customDataGrid :global(.rdg-header-cell) {
+    background: transparent !important;
+    color: #000 !important;
+    height: 72px !important;
+    line-height: 72px !important;
+    min-height: 72px !important;
+}
+
+.customDataGrid :global(.rdg-row) {
+    height: 72px !important;
+    line-height: 72px !important;
+    min-height: 72px !important;
+}
+
+.customDataGrid :global(.rdg-cell) {
+    background: transparent !important;
+    border-right: 1px solid #dbdbdb !important;
+    border-bottom: 1px solid #dbdbdb !important;
+    color: #000 !important;
+    height: 72px !important;
+    line-height: 72px !important;
+    min-height: 72px !important;
+}
+
+/* Стилі для рядків даних */
+.customDataGrid :global(.rdg-row:nth-child(2)) {
+    background: #D3D3D3 !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    line-height: 72px !important;
+}
+
+.customDataGrid :global(.rdg .rdg-row:nth-child(n+3)) {
+    background: #FFFFFF !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    line-height: 72px !important;
+}
+
+.customDataGrid :global(.rdg-row .rdg-cell) {
+    background: transparent !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    line-height: 72px !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    .customDataGrid :global(.rdg) {
+        grid-auto-rows: 72px !important;
+        border-radius: 8px !important;
+    }
+
+    .customDataGrid :global(.rdg-cell),
+    .customDataGrid :global(.rdg-header-row) {
+        background: rgba(133, 170, 159, 0.1) !important;
+        --rdg-background-color: #FCFCFC !important;
+        height: 72px !important;
+        line-height: 72px !important;
+        min-height: 72px !important;
+    }
+
+    .customDataGrid :global(.rdg-row) {
+        height: 72px !important;
+        line-height: 72px !important;
+        min-height: 72px !important;
+    }
+
+    .customDataGrid :global(.rdg-row:nth-child(2)) {
+        background: #A9A9A9 !important;
+        height: 72px !important;
+        min-height: 72px !important;
+        line-height: 72px !important;
+    }
+
+    .customDataGrid :global(.rdg .rdg-row:nth-child(n+3)) {
+        background: #FFFFFF !important;
+        height: 72px !important;
+        min-height: 72px !important;
+        line-height: 72px !important;
+    }
+
+    .customDataGrid :global(.rdg-row .rdg-cell) {
+        background: transparent !important;
+        height: 72px !important;
+        min-height: 72px !important;
+        line-height: 72px !important;
+    }
+
+    .customDataGrid {
+        background: #FCFCFC !important;
+        z-index: -1;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+    }
+}
+
+.tableContainer {
+    display: flex;
+    min-width: 1240px;
+    min-height: 620px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #FFF;
+    z-index: 0;
+}
+
+
+.actionButton {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.actionButton:hover {
+    background-color: #0056b3;
+}
+
+.popover {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 8px;
+    min-width: 100px;
+}
+
+.deleteButton {
+    width: 100%;
+    padding: 8px;
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.deleteButton:hover {
+    background-color: #d9363e;
+}

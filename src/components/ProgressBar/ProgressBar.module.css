@@ -1,0 +1,13 @@
+.progressBar {
+    position: relative;
+}
+
+.progressFill {
+    border-radius: 4px;
+}
+
+.circularProgressBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

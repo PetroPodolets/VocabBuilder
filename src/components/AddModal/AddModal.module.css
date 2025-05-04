@@ -1,0 +1,35 @@
+.modalOverlayStyle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999999;
+}
+
+.modalContentStyle {
+    background-color: white;
+    padding: 48px 64px;
+    border-radius: 8px;
+    width: 400px;
+    position: relative;
+    background: var(--green);
+    border-radius: 30px;
+        width: 627px;
+        height: 621px;
+}
+
+.closeButtonStyle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+   font-size: 26px;
+}

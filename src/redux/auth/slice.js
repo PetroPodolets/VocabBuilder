@@ -4,7 +4,7 @@ import { logIn, logOut, register, refreshUser } from "./operations";
 const authSlice = createSlice({
     name: "auth",
     initialState: {
-        user: JSON.parse(localStorage.getItem("user")) || { name: null, email: null }, // Витягуємо user із localStorage
+        user: JSON.parse(localStorage.getItem("user")) || { name: null, email: null, _id: null }, 
         token: localStorage.getItem("token") || null,
         isLoggedIn: Boolean(localStorage.getItem("token")),
         isRefreshing: false,
@@ -20,12 +20,13 @@ const authSlice = createSlice({
                 state.user = {
                     name: action.payload.name,
                     email: action.payload.email,
+                    _id: action.payload._id, 
                 };
                 state.token = action.payload.token;
                 state.isLoading = false;
                 state.isLoggedIn = true;
                 localStorage.setItem("token", action.payload.token);
-                localStorage.setItem("user", JSON.stringify(state.user)); // Зберігаємо user
+                localStorage.setItem("user", JSON.stringify(state.user));
             })
             .addCase(register.rejected, state => {
                 state.isLoading = false;
@@ -37,22 +38,23 @@ const authSlice = createSlice({
                 state.user = {
                     name: action.payload.name,
                     email: action.payload.email,
+                    _id: action.payload._id, 
                 };
                 state.token = action.payload.token;
                 state.isLoggedIn = true;
                 state.isLoading = false;
                 localStorage.setItem("token", action.payload.token);
-                localStorage.setItem("user", JSON.stringify(state.user)); // Зберігаємо user
+                localStorage.setItem("user", JSON.stringify(state.user));
             })
             .addCase(logIn.rejected, state => {
                 state.isLoading = false;
             })
             .addCase(logOut.fulfilled, state => {
-                state.user = { name: null, email: null };
+                state.user = { name: null, email: null, _id: null }; 
                 state.token = null;
                 state.isLoggedIn = false;
                 localStorage.removeItem("token");
-                localStorage.removeItem("user"); // Видаляємо user
+                localStorage.removeItem("user");
             })
             .addCase(refreshUser.pending, state => {
                 state.isRefreshing = true;
@@ -61,15 +63,16 @@ const authSlice = createSlice({
                 state.user = {
                     name: action.payload.name,
                     email: action.payload.email,
+                    _id: action.payload._id, 
                 };
                 state.isLoggedIn = true;
                 state.isRefreshing = false;
-                localStorage.setItem("user", JSON.stringify(state.user)); // Зберігаємо user
+                localStorage.setItem("user", JSON.stringify(state.user));
             })
             .addCase(refreshUser.rejected, state => {
                 state.isRefreshing = false;
                 state.isLoggedIn = false;
-                localStorage.removeItem("user"); // Очищаємо user при помилці
+                localStorage.removeItem("user");
             }),
 });
 

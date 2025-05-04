@@ -4,7 +4,6 @@ import { Navigate } from "react-router-dom";
 
 function RestrictedRoute({ children, redirectTo }) {
     const isLoggedIn = useSelector(selectIsLoggedIn);
-    // Якщо користувач авторизований, перенаправляємо на redirectTo ("/dictionary")
     return isLoggedIn ? <Navigate to={redirectTo} replace /> : children;
 }
 

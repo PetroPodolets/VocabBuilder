@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../redux/auth/selectors";
 import { logOut } from "../../redux/auth/operations";
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import css from "./UserMenu.module.css";
 
 export default function UserMenu() {
@@ -13,18 +13,18 @@ export default function UserMenu() {
         dispatch(logOut())
             .unwrap()
             .then(() => {
-                toast.success("Вихід виконано успішно");
+                toast.success("Logout successful");
             })
             .catch(error => {
-                toast.error("Помилка при виході: " + error);
+                toast.error("Login error: " + error);
             });
     };
 
     if (!user) {
         return (
             <div className={css.userMenu}>
-                <p className={css.textUserMenu}>Користувач не авторизований</p>
-                <Toaster />
+                <p className={css.textUserMenu}>User not authorized</p>
+                
             </div>
         );
     }
@@ -45,7 +45,6 @@ export default function UserMenu() {
                     <use href="/symbol.svg#icon-arrow-right" />
                 </svg>
             </button>
-            <Toaster />
         </div>
     );
 }

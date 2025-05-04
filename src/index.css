@@ -5,7 +5,6 @@
     --black: #121417;
     --white-green: #a5c0b8;
     --font-family: "Fixel Display";
-
 }
 
 
@@ -19,6 +18,7 @@
 body {
     font-family: var(--font-family);
     margin: 0 ;
+    background: var(--white-1);
    
 }
 

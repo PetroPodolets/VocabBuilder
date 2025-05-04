@@ -1,0 +1,9 @@
+.containerDashboard{
+    display: flex;
+    align-items: center;
+        justify-content: space-around;
+}
+.container{
+    display: flex;
+    gap: 16px;
+}

@@ -1,0 +1,215 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--green);
+}
+
+.containerText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.containerText h2 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--white);
+}
+
+.containerText p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(252, 252, 252, 0.8);
+    text-align: start;
+}
+
+.selectContainer {
+    border: 1px solid rgba(252, 252, 252, 0.3);
+    border-radius: 15px;
+    padding: 12px 24px;
+    width: 204px;
+    height: 48px;
+    background: none;
+}
+
+.select {
+    background: var(--green);
+    border: none;
+    width: 156px;
+    height: 24px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--white);
+    outline: none;
+}
+
+.radioGroup {
+    display: flex;
+    margin: 10px 0;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--white);
+}
+
+.hiddenRadio {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.customRadio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: transparent;
+    transition: background-color 0.2s;
+}
+
+.customRadio.checked {
+    background-color: none;
+}
+
+.customRadio.checked::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
+.irregularNote {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    max-width: 400px;
+    color: var(--white);
+}
+
+.containerLabel {
+    display: flex;
+    gap: 20px;
+}
+
+.Input {
+    border: 1px solid rgba(252, 252, 252, 0.3);
+    border-radius: 15px;
+    padding: 16px 246px 16px 18px;
+    width: 354px;
+    height: 56px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--white);
+    background: none;
+    outline: none;
+}
+
+.inputWithFlag {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: 10px 0;
+}
+
+.flag {
+    vertical-align: middle;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.flagContainer {
+    display: flex;
+    gap: 8px;
+    color: var(--white);
+    align-items: center;
+}
+
+
+.addButton {
+    border-radius: 30px;
+    padding: 14px 104px;
+    width: 245px;
+    height: 56px;
+    background: var(--white);
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 18px;
+
+    /* line-height: 28px; */
+    line-height: 1.55556;
+    color: var(--black);
+    outline: none;
+    border: none;
+    transition:  color 0.3s ease;
+    
+}
+
+.addButton:hover{
+    color: var(--green);
+}
+
+.cancelButton{
+    border: 1px solid rgba(252, 252, 252, 0.4);
+        border-radius: 30px;
+        padding: 14px 92px;
+        width: 245px;
+        height: 56px;
+        font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 18px;
+        
+            /* line-height: 28px; */
+            line-height: 1.55556;
+            color: var(--white);
+            background: none;
+
+            font-family: var(--font-family);
+                font-weight: 700;
+                font-size: 18px;
+            
+                /* line-height: 28px; */
+                line-height: 1.55556;
+                color: var(--white);
+                transition: background-color 0.5s ease, color 0.5s ease;
+
+}
+
+.cancelButton:hover{
+    color: var(--black);
+    background-color: var(--white);
+}

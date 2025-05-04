@@ -1,0 +1,25 @@
+.statistic{
+    font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 16px;
+    
+        /* line-height: 24px; */
+        line-height: 1.5;
+        color: rgba(18, 20, 23, 0.5);
+}
+
+.statistic span{
+    font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 20px;
+    
+        /* line-height: 30px; */
+        line-height: 1.5;
+        color: var(--black);
+}
+
+/* .container{
+    width: 100px;
+    background-color: black;
+    color: white;
+} */

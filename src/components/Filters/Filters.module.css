@@ -1,0 +1,66 @@
+.filterContainer {
+    display: flex;
+    gap: 8px;
+}
+
+.searchInput {
+    border: none;
+    border-radius: 15px;
+    padding: 12px 24px;
+    width: 274px;
+    height: 48px;
+    background: none;
+    outline: none;
+}
+
+
+.searchInputContainer {
+    display: flex;
+    border: 1px solid rgba(18, 20, 23, 0.1);
+    border-radius: 15px;
+    padding: 14px 24px;
+    width: 274px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    background: none;
+}
+
+.searchIcon {
+    margin-top: 6px;
+}
+
+.categorySelect{
+   border: none;
+   width: 116px;
+        background: none;
+}
+
+.containerCategory{
+border: 1px solid rgba(18, 20, 23, 0.1);
+    border-radius: 15px;
+    padding: 12px 24px;
+    width: 164px;
+    height: 48px;
+}
+.verbTypeRadio{
+    display: flex;
+    margin: 14px 0 ;
+    gap: 16px;
+}
+
+.verbTypeRadio label{
+    display: flex;
+    gap: 8px;
+}
+.verbTypeRadio input{
+    width: 20px;
+    height: 20px;
+}
+
+.loader{
+    display: flex;
+    flex-wrap: wrap;
+        align-content: center;
+        color: red;
+}
