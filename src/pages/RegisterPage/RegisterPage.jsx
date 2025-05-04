@@ -10,6 +10,6 @@ export default function RegisterPage() {
                 <RegisterForm />
                 <Illustrtion />
             </div>
-            <img className={css.vector} src="../../../public/Vector.png" alt=""  />
+            <img className={css.vector} src="./../../public/Vector.png" alt=""  />
         </div>)
 }

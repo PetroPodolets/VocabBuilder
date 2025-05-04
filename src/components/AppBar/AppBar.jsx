@@ -12,7 +12,7 @@ export default function AppBar() {
         <><a href="#" className={css.logo}>
           {" "}
           <svg width="24" height="24">
-            <use href="../../../public/symbol.svg#icon-logo"></use>
+            <use href="./../../public/symbol.svg#icon-logo"></use>
           </svg>{" "}
           <p>VocabBuilder</p>
         </a>
