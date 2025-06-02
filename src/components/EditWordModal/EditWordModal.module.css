@@ -1,0 +1,123 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    pointer-events: auto;
+    /* Дозволяє кліки на overlay */
+}
+
+.modal {
+    background: var(--green);
+    padding: 64px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    pointer-events: auto;
+    /* Дозволяє кліки всередині модалки */
+
+    border-radius: 30px;
+    width: 627px;
+    height: 345px;
+}
+
+.formGroup {
+    margin-bottom: 16px;
+    display: flex;
+    gap: 32px;
+
+}
+
+
+.formGroup input {
+    background: none;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+
+    /* line-height: 24px; */
+    line-height: 1.5;
+    color: var(--white);
+    border: 1px solid rgba(252, 252, 252, 0.3);
+    border-radius: 15px;
+    padding: 16px 227px 16px 18px;
+    width: 354px;
+    height: 56px;
+    outline: none;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 10px;
+}
+
+.buttonGroup button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttonGroup button[type="submit"] {
+    border-radius: 30px;
+    padding: 14px 101px;
+    width: 245px;
+    height: 56px;
+    background: var(--white);
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 18px;
+
+    /* line-height: 28px; */
+    line-height: 1.55556;
+    color: var(--black);
+}
+
+.buttonGroup button[type="button"] {
+    border: 1px solid rgba(252, 252, 252, 0.4);
+    border-radius: 30px;
+    padding: 14px 92px;
+    width: 245px;
+    height: 56px;
+    background: none;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 18px;
+
+    /* line-height: 28px; */
+    line-height: 1.55556;
+    color: var(--white);
+}
+
+.closeButtonStyle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    font-size: 26px;
+}
+
+.flag {
+    vertical-align: middle;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.flagContainer {
+    display: flex;
+    gap: 8px;
+    color: var(--white);
+    align-items: center;
+}

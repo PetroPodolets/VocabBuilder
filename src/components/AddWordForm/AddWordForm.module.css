@@ -175,41 +175,41 @@
     color: var(--black);
     outline: none;
     border: none;
-    transition:  color 0.3s ease;
-    
+    transition: color 0.3s ease;
+
 }
 
-.addButton:hover{
+.addButton:hover {
     color: var(--green);
 }
 
-.cancelButton{
+.cancelButton {
     border: 1px solid rgba(252, 252, 252, 0.4);
-        border-radius: 30px;
-        padding: 14px 92px;
-        width: 245px;
-        height: 56px;
-        font-family: var(--font-family);
-            font-weight: 700;
-            font-size: 18px;
-        
-            /* line-height: 28px; */
-            line-height: 1.55556;
-            color: var(--white);
-            background: none;
+    border-radius: 30px;
+    padding: 14px 92px;
+    width: 245px;
+    height: 56px;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 18px;
 
-            font-family: var(--font-family);
-                font-weight: 700;
-                font-size: 18px;
-            
-                /* line-height: 28px; */
-                line-height: 1.55556;
-                color: var(--white);
-                transition: background-color 0.5s ease, color 0.5s ease;
+    /* line-height: 28px; */
+    line-height: 1.55556;
+    color: var(--white);
+    background: none;
+
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 18px;
+
+    /* line-height: 28px; */
+    line-height: 1.55556;
+    color: var(--white);
+    transition: background-color 0.5s ease, color 0.5s ease;
 
 }
 
-.cancelButton:hover{
+.cancelButton:hover {
     color: var(--black);
     background-color: var(--white);
 }

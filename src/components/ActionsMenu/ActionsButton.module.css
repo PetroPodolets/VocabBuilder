@@ -17,8 +17,73 @@
     text-align: left;
     cursor: pointer;
     font-size: 14px;
+    
 }
 
 .menuItem:hover {
     background: #f5f5f5;
 }
+
+.editButton {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    /* line-height: 24px; */
+    line-height: 1.5;
+    color: var(--black);
+    background: none;
+    width: 65px;
+    border: none;
+    display: flex;
+    align-items: center;
+
+}
+
+.editButton:hover {
+    color: var(--green);
+}
+
+.svg {
+    stroke: #1976d2;
+    /* Змінено fill на stroke */
+    width: 16px;
+    height: 16px;
+
+
+}
+
+.ActionsMenuContainer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+        width: 104px;
+        flex-wrap: wrap;
+        align-content: center;
+}
+
+.svgContainer {
+    margin: 4px 8px 4px 0;
+}
+
+.deleteButton {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+
+    /* line-height: 24px; */
+    line-height: 1.5;
+    color: var(--black);
+    background: none;
+    border: none;
+    width: 76px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;    
+}
+/* .css-vl6bb4-MuiBackdrop-root-MuiModal-backdrop {
+    border-radius: 15px;
+        padding: 12px 24px;
+        width: 124px;
+        height: 80px;
+} */

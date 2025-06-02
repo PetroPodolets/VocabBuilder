@@ -13,6 +13,9 @@ import './App.css';
 const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
 const RegisterPage = lazy(() => import("./pages/RegisterPage/RegisterPage"));
 const DictionaryPage = lazy(() => import("./pages/DictionaryPage/DictionaryPage"));
+const RecommendPage = lazy(() => import("./pages/RecommendPage/RecommendPage"));
+const TrainingPage = lazy(() => import("./pages/TrainingPage/TrainingPage"));
+
 
 function App() {
     const dispatch = useDispatch();
@@ -47,17 +50,25 @@ function App() {
                         element={<RestrictedRoute redirectTo="/dictionary"><LoginPage /></RestrictedRoute>}
                     />
                     <Route
+                        path="/recommend"
+                        element={<PrivateRoute redirectTo="/recommend"><RecommendPage /></PrivateRoute>}
+                    />
+
+                    <Route
+                        path="/training"
+                        element={<PrivateRoute redirectTo="/training"><TrainingPage /></PrivateRoute>} />
+                    <Route
                         path="/dictionary"
                         element={<PrivateRoute redirectTo="/login"><DictionaryPage /></PrivateRoute>}
                     />
-                    
+
                     <Route
                         path="*"
                         element={<RestrictedRoute redirectTo="/dictionary"><LoginPage /></RestrictedRoute>}
                     />
                 </Routes>
             </Suspense>
-            
+
         </Layout>
     );
 }

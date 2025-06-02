@@ -3,54 +3,63 @@ import 'react-data-grid/lib/styles.css';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
-import ProgressBar from '../ProgressBar/ProgressBar';
-import ActionsMenu from '../ActionsMenu/ActionsMenu';
-import { fetchWords } from '../../redux/word/operation';
-import css from './WordsTable.module.css';
+import { fetchAllWords, addWordFromForeignUser } from '../../redux/word/operation';
+import css from './RecommendTable.module.css';
 
 const columns = [
-    { key: 'word', name: 'Word', width: 280 },
-    { key: 'translation', name: 'Translation', width: 274 },
+    { key: 'word', name: 'Word', width: 372 },
+    { key: 'translation', name: 'Translation', width: 364 },
     { key: 'category', name: 'Category', width: 260 },
-    {
-        key: 'status',
-        name: 'Status',
-        width: 254,
-        renderCell: ({ row }) => (
-            <div style={{ display: 'flex', alignItems: 'center', height: '100%', justifyContent: 'center' }}>
-                <ProgressBar
-                    type="circular"
-                    progress={row.progress || 0}
-                    size={40}
-                    fillColor="#4caf50"
-                    backgroundColor="#e0e0e0"
-                />
-            </div>
-        ),
-    },
     {
         key: 'actions',
         name: '',
-        width: 132,
-        renderCell: ({ row }) => (
-            <div
-                style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    height: '100%',
-                    justifyContent: 'center',
-                    boxSizing: 'border-box',
-                }}
-            >
-                <ActionsMenu row={row} />
-            </div>
-        ),
+        width: 208,
+        renderCell: ({ row }) => {
+            const dispatch = useDispatch();
+            const token = useSelector((state) => state.auth.token);
+
+            const handleAddWord = () => {
+                dispatch(addWordFromForeignUser({ wordId: row.id, token }))
+                    .unwrap()
+                    .then(() => {
+                        toast.success('Word added successfully!');
+                    })
+                    .catch((error) => {
+                        toast.error(`Failed to add word: ${error}`);
+                    });
+            };
+
+            return (
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        height: '100%',
+                        justifyContent: 'center',
+                        boxSizing: 'border-box',
+                    }}
+                >
+                    <button onClick={handleAddWord} className={css.addButton}>
+                        Add to dictionary{' '}
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.33325 9.99999H16.6666M16.6666 9.99999L13.3333 6.66666M16.6666 9.99999L13.3333 13.3333"
+                                stroke="#85AA9F"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            );
+        },
     },
 ];
 
-const WordsTable = () => {
+const RecommendTable = () => {
     const dispatch = useDispatch();
-    const words = useSelector((state) => state.words.words);
+    const allWords = useSelector((state) => state.words.allWords);
     const totalPages = useSelector((state) => state.words.totalPages);
     const currentPage = useSelector((state) => state.words.currentPage);
     const selectedCategory = useSelector((state) => state.words.selectedCategory);
@@ -58,27 +67,41 @@ const WordsTable = () => {
     const error = useSelector((state) => state.words.error);
     const token = useSelector((state) => state.auth.token);
 
-    const [localPage, setLocalPage] = useState(currentPage || 1);
+    const [localPage, setLocalPage] = useState(1); // Завжди починаємо з 1
 
+    // Синхронізуємо localPage із currentPage при першому завантаженні
     useEffect(() => {
-        console.log('Fetching words for page:', localPage);
-        dispatch(fetchWords({ token, page: localPage, limit: 7, category: selectedCategory }));
+        if (currentPage && currentPage !== localPage) {
+            setLocalPage(currentPage);
+        }
+    }, [currentPage]);
+
+    // Завантажуємо слова при зміні сторінки або категорії
+    useEffect(() => {
+        console.log('Fetching recommended words for page:', localPage);
+        if (token) {
+            dispatch(fetchAllWords({ token, page: localPage, limit: 7, category: selectedCategory }));
+        }
     }, [dispatch, token, localPage, selectedCategory]);
 
     useEffect(() => {
-     
+        console.log('All Words:', allWords);
+        console.log('Total Pages:', totalPages);
+        console.log('Current Page:', currentPage);
+        console.log('Local Page:', localPage);
+        console.log('Loading:', loading);
+        console.log('Error:', error);
         if (error) {
             toast.error(`Error: ${error}`);
             console.error('Error Details:', error);
         }
-    }, [error, words, selectedCategory, totalPages, currentPage, loading]);
+    }, [error, allWords, selectedCategory, totalPages, currentPage, loading, localPage]);
 
-    const rows = words.map((word, index) => ({
+    const rows = allWords.map((word, index) => ({
         id: word._id || `${index + 1}`,
         word: word.en || 'N/A',
         translation: word.ua || 'N/A',
         category: word.category || 'N/A',
-        progress: word.progress || 0,
         actions: '',
         originalWord: word,
     }));
@@ -93,15 +116,11 @@ const WordsTable = () => {
         }
     };
 
-    useEffect(() => {
-        console.log('Local Page updated to:', localPage);
-    }, [localPage]);
-
     const renderPagination = () => {
         console.log('Rendering pagination, total pages:', totalPages);
-        if (totalPages <= 1) {
+        if (!totalPages || totalPages <= 1) {
             console.log('No pagination needed, total pages:', totalPages);
-            return null; // Повертаємо null, щоб пагінація не відображалася
+            return null; // Не відображаємо пагінацію, якщо сторінок немає або лише одна
         }
 
         const pageButtons = [];
@@ -176,8 +195,10 @@ const WordsTable = () => {
         <div className={css.wordTable}>
             <div className={css.tableContainer}>
                 {loading && <p>Loading...</p>}
-                {!loading && !error && (!words || words.length === 0) && <p className={css.noWords}>No words available.</p>}
-                {!loading && !error && words.length > 0 && (
+                {!loading && !error && (!allWords || allWords.length === 0) && (
+                    <p className={css.noWords}>No recommended words available.</p>
+                )}
+                {!loading && !error && allWords.length > 0 && (
                     <>
                         <DataGrid
                             className={css.customDataGrid}
@@ -194,4 +215,4 @@ const WordsTable = () => {
     );
 };
 
-export default WordsTable;
+export default RecommendTable;

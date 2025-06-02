@@ -1,0 +1,277 @@
+.progressBarContainer {
+    /* width: 50%; */
+    margin-bottom: 20px;
+    margin-left: 1182px;
+}
+
+.select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    /* width: 50%; */
+    max-width: 300px;
+}
+
+.container {
+    display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-content: center;
+        flex-wrap: wrap;   
+}
+
+.leftSection {
+    border-right: 1px solid #dbdbdb;
+    border-radius: 8px 0 0 0;
+    padding: 22px ;
+    width: 602px;
+    height: 302px;
+    background: var(--white);
+}
+
+/* .leftSection,
+.rightSection {
+    flex: 1;
+} */
+
+
+.rightSection {
+    display: flex;
+    border: 0px solid #dbdbdb;
+    border-radius: 0 8px 8px 0;
+    padding: 28px ;
+    width: 600px;
+    height: 302px;
+    background: var(--white);
+    gap: 20px;
+}
+
+.input {
+    padding: 8px;
+    width: 500px;
+
+    background: none;
+    border: none;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.nextButton,
+.saveButton,
+.closeButton {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.nextButton {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(18, 20, 23, 0.5);
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.saveButton {
+    border-radius: 30px;
+        padding: 14px 80px;
+        width: 203px;
+        height: 56px;
+        background: var(--green);
+        font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 18px;
+        
+            /* line-height: 28px; */
+            line-height: 1.55556;
+            color: var(--white);
+}
+
+
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    /* width: 100%; */
+    text-align: center;
+}
+
+
+
+.containerTrainingText {
+    display: flex;
+    border-radius: 15px;
+    padding: 18px;
+    width: 1240px;
+    height: 338px;
+    background: #fff;
+}
+
+.taskWord{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+
+}
+.language{
+    margin-left: 400px;
+}
+
+
+.trainingRoom{
+    margin-top: 136px;
+    display: flex;
+    flex-direction: column;
+    width: 1240px;
+}
+
+
+.containerButton{
+    margin-top: 80px;
+    display: flex;
+    gap: 10px;
+}
+
+.containerInput{
+    display: flex;
+    gap: 267px;
+    align-items: center;
+    margin-bottom: 204px;
+}
+.Container{
+    display: flex;
+    justify-content: center;
+}
+
+
+.cancelButton{
+    border: 1px solid var(--green);
+        border-radius: 30px;
+        padding: 14px 71px;
+        width: 203px;
+        height: 56px;
+        font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 18px;
+        
+            /* line-height: 28px; */
+            line-height: 1.55556;
+            color: var(--green);
+            background: none;
+}
+
+.modal{
+    border-radius: 30px;
+        width: 527px;
+        height: 519px;
+        background: var(--green);
+}
+
+.closeIcon{
+    background: none;
+    border: none;
+    margin-left: 426px;
+}
+
+.trainingModalTxt{
+    font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 40px;
+    
+        /* line-height: 48px; */
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: var(--white);
+}
+
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.trainingModalTxt {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.columnsContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    text-align: left;
+}
+
+.column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.column li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+
+
+
+.answerColumn{
+    font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+    
+        /* line-height: 24px; */
+        line-height: 1.5;
+        color: rgba(252, 252, 252, 0.5);
+}
+
+
+.listAnswer{
+    font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 20px;
+        color: var(--white);
+}
